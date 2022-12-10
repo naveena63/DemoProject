@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="pixel_16dp">16.0dp</dimen>
+    <dimen name="pixel_4dp">4.0dp</dimen>
+    <dimen name="pixel_14sp">14sp</dimen>
+    <dimen name="pixel_8dp">8.0dp</dimen>
+    <dimen name="pixel_12dp">12.0dp</dimen>
+</resources>
