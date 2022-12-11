@@ -24,7 +24,7 @@ public class ListViewActivity extends AppCompatActivity {
     List<ListItemsResponseDataItem> listItemsResponseDataItems;
 
     ListItemadapter listItemadapter;
-
+    public static final String LIMIT = "20";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,10 +35,14 @@ public class ListViewActivity extends AppCompatActivity {
         cardRecyclerview.setLayoutManager(layoutManager);
         listItemadapter = new ListItemadapter(getApplicationContext(), listItemsResponseDataItems);
         cardRecyclerview.setAdapter(listItemadapter);
+        loadData(2);
+
+    }
+    private void loadData(int page)
+    {
 
         DemoServicesInterface apiService = MyRetrofitInstance.getRetrofitInstance().create(DemoServicesInterface.class);
-        Call<List<ListItemsResponseDataItem>> call = apiService.getListItems();
-
+        Call<List<ListItemsResponseDataItem>> call = apiService.getListItems(String.valueOf(page),LIMIT);
         call.enqueue(new Callback<List<ListItemsResponseDataItem>>() {
             @Override
             public void onResponse(Call<List<ListItemsResponseDataItem>> call, Response<List<ListItemsResponseDataItem>> response) {
@@ -49,7 +53,7 @@ public class ListViewActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<ListItemsResponseDataItem>> call, Throwable t) {
-               // Log.d("TAG", "Response = " + t.toString());
+                // Log.d("TAG", "Response = " + t.toString());
             }
         });
     }
