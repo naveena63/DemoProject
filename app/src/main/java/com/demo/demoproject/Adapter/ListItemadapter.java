@@ -1,6 +1,7 @@
 package com.demo.demoproject.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ public class ListItemadapter extends RecyclerView.Adapter<ListItemadapter.Myview
         this.list = list;
     }
 
-    public void setMovieList(List<ListItemsResponseDataItem> movieList) {
+    public void setMovieList(List<ListItemsResponseDataItem> list) {
         this.list = list;
         notifyDataSetChanged();
     }
@@ -39,9 +40,9 @@ public class ListItemadapter extends RecyclerView.Adapter<ListItemadapter.Myview
 
     @Override
     public void onBindViewHolder(ListItemadapter.MyviewHolder holder, int position) {
-        holder.tvMovieName.setText(list.get(position).getAuthor().toString());
+        holder.tvName.setText(list.get(position).getAuthor().toString());
 
-        Glide.with(context).load(list.get(position).getUrl()).apply(RequestOptions.centerCropTransform()).into(holder.image);
+        Glide.with(context).load(list.get(position).getDownloadUrl()).apply(RequestOptions.centerCropTransform()).into(holder.image);
     }
 
     @Override
@@ -54,12 +55,12 @@ public class ListItemadapter extends RecyclerView.Adapter<ListItemadapter.Myview
     }
 
     public class MyviewHolder extends RecyclerView.ViewHolder {
-        TextView tvMovieName;
+        TextView tvName;
         ImageView image;
 
         public MyviewHolder(View itemView) {
             super(itemView);
-            tvMovieName = (TextView) itemView.findViewById(R.id.title_cardview);
+            tvName = (TextView) itemView.findViewById(R.id.title_cardview);
             image = (ImageView) itemView.findViewById(R.id.iv_cover);
         }
     }
