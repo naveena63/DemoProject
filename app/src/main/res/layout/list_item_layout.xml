@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/ly_root"
@@ -23,20 +23,13 @@
             android:src="@drawable/splash_logo"/>
         <TextView
             android:id="@+id/title_cardview"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_cover"
             android:fontFamily="@font/roboto_slab"
             android:padding="10dp"
+            android:drawableRight="@drawable/ic_baseline_download_24"
             android:text="title"/>
-            <TextView
-            android:id="@+id/desc_cardview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title_cardview"
-            android:fontFamily="@font/roboto_slab"
-            android:padding="10dp"
-            android:text="descrption"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
