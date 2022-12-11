@@ -14,7 +14,8 @@ public interface DemoServicesInterface {
 
 
     @GET("/v2/list?")
-     Call<List<ListItemsResponseDataItem>> getListItems();
+     Call<List<ListItemsResponseDataItem>> getListItems(@Query("page") String page,
+                                                        @Query("limit") String limit);
 
     // ToDo Change ResponseBody
 }
