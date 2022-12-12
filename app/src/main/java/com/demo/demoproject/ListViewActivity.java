@@ -39,7 +39,7 @@ ImageView refreshIV;
         listItemsResponseDataItems = new ArrayList<>();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         cardRecyclerview.setLayoutManager(layoutManager);
-        listItemadapter = new ListItemadapter(getApplicationContext(), listItemsResponseDataItems);
+        listItemadapter = new ListItemadapter(getApplicationContext(), listItemsResponseDataItems,ListViewActivity.this);
         cardRecyclerview.setAdapter(listItemadapter);
         loadData(2);
 refreshIV.setOnClickListener(new View.OnClickListener() {
