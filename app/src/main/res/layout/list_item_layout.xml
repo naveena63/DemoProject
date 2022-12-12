@@ -28,6 +28,7 @@
             android:layout_below="@id/iv_cover"
             android:fontFamily="@font/roboto_slab"
             android:padding="10dp"
+            android:background="@drawable/ripple_effect"
             android:drawableRight="@drawable/ic_baseline_download_24"
             android:text="title"/>
         </RelativeLayout>
