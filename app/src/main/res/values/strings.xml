@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DemoProject</string>
     <string name="listItems">List Items</string>
+    <string name="dialog_text">Congratulations!! You have created custom dialog successfully</string>
 </resources>
